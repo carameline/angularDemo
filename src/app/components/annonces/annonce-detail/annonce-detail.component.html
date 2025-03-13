@@ -1,0 +1,32 @@
+
+<div *ngIf="annonce" class="annonce-detail" data-aos="fade-up">
+  <div class="image-banner">
+    <i class="fas fa-image fa-5x"></i>
+  </div>
+
+  <div class="detail-content">
+    <div class="title-bar">
+      <h1>{{ annonce?.titre }}</h1>
+      <button class="favori-btn" (click)="toggleFavori()">
+        <i class="fas fa-heart" [class.favori]="annonce?.favori"></i>
+      </button>
+    </div>
+
+    <p class="price">{{ annonce?.prix }} €</p>
+    <p class="date">Publié le {{ annonce?.datePublication | date }}</p>
+
+    <div class="description">
+      <h3>Description</h3>
+      <p>{{ annonce?.description }}</p>
+    </div>
+
+    <div class="cta-bar">
+      <button class="btn-primary">
+        <i class="fas fa-comment"></i> Contacter
+      </button>
+      <a (click)="goBack()" class="btn-link">
+		  <i class="fas fa-arrow-left"></i> Retour à la liste
+		</a>
+    </div>
+  </div>
+</div>

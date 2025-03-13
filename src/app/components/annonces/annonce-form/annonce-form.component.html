@@ -1,0 +1,65 @@
+<section class="form-section" data-aos="fade-up">
+  <h2>Publier une annonce</h2>
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm" novalidate>
+    <div class="form-group">
+      <label for="titre">Titre *</label>
+      <input
+        type="text"
+        id="titre"
+        name="titre"
+        required
+        [(ngModel)]="annonce.titre"
+        #titre="ngModel"
+        [class.invalid]="titre.invalid && titre.touched"
+      />
+      <small *ngIf="titre.invalid && titre.touched">Le titre est requis.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description *</label>
+      <textarea
+        id="description"
+        name="description"
+        required
+        [(ngModel)]="annonce.description"
+        #description="ngModel"
+        [class.invalid]="description.invalid && description.touched"
+      ></textarea>
+      <small *ngIf="description.invalid && description.touched">La description est requise.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="prix">Prix (€) *</label>
+      <input
+        type="number"
+        id="prix"
+        name="prix"
+        required
+        min="1"
+        [(ngModel)]="annonce.prix"
+        #prix="ngModel"
+        [class.invalid]="prix.invalid && prix.touched"
+      />
+      <small *ngIf="prix.invalid && prix.touched">Un prix valide est requis.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="categorie">Catégorie *</label>
+      <select
+        id="categorie"
+        name="categorie"
+        required
+        [(ngModel)]="annonce.categorie"
+        #categorie="ngModel"
+        [class.invalid]="categorie.invalid && categorie.touched"
+      >
+        <option value="" disabled selected>Choisir une catégorie</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+      <small *ngIf="categorie.invalid && categorie.touched">Choisissez une catégorie.</small>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Publier</button>
+  </form>
+</section>

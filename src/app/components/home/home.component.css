@@ -1,0 +1,219 @@
+/**************** design section hero */
+
+.hero-section {
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  background-color: white;
+  color: #3498db;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-cta:hover {
+  transform: scale(1.05);
+  background-color: #ecf0f1;
+}
+
+/****** formuaire de recherche dans hero *****/ 
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.search-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-group i {
+  position: absolute;
+  left: 1rem;
+  color: var(--text);
+}
+
+.search-form input,
+.search-form select {
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 20px; /* ✅ arrondi plus doux */
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 1rem;
+  min-width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* ✅ flou doux */
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* focus subtil */
+}
+
+.search-form button {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: var(--secondary);
+}
+
+
+/****** pourquoi section *****/
+
+.why-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.why-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.why-section h2 span {
+  color: var(--primary);
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.why-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--card-shadow);
+}
+
+.why-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/***** seconde section ***/
+.categories-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.categories-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--card-shadow);
+  color: var(--primary);
+}
+
+.category-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/***** 3eme section **/ 
+.latest-section {
+  padding: 4rem 2rem;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.latest-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.see-more {
+  margin-top: 2rem;
+}
+
+.see-more a {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.see-more a:hover {
+  color: var(--secondary);
+}

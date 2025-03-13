@@ -1,0 +1,20 @@
+<section class="mes-annonces-section" data-aos="fade-up">
+	
+  <h2>Mes annonces</h2>
+
+	<div *ngIf="message" class="success-message">
+	  {{ message }}
+	</div>
+	
+  <div *ngIf="mesAnnonces.length === 0">
+    <p>Vous n’avez pas encore publié d’annonce.</p>
+    <a routerLink="/mon-compte/publier">Publier une annonce</a>
+  </div>
+
+  <div class="annonces-grid" *ngIf="mesAnnonces.length > 0">
+    <app-annonce-card
+      *ngFor="let annonce of mesAnnonces"
+      [annonce]="annonce"
+    ></app-annonce-card>
+  </div>
+</section>

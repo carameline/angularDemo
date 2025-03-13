@@ -1,0 +1,31 @@
+<section class="annonce-list-section" data-aos="fade-up">
+  <h2>Toutes les annonces</h2>
+  <p>Parcourez toutes les petites annonces disponibles sur ZappyAnnonces.</p>
+
+  <form class="search-form" (ngSubmit)="onSearch()">
+    <input
+      type="text"
+      placeholder="Recherche par mot-clé"
+      [(ngModel)]="searchQuery"
+      name="search"
+    />
+
+    <select [(ngModel)]="searchCategorie" name="categorie">
+      <option value="">Toutes catégories</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <div class="annonces-grid">
+    <app-annonce-card
+      *ngFor="let annonce of loadedAnnonces"
+      [annonce]="annonce"
+    ></app-annonce-card>
+  </div>
+  
+	<div *ngIf="loadedAnnonces.length >= annonces.length" class="end-message">
+	  <p><i class="fas fa-check-circle"></i> Vous avez atteint la fin des annonces</p>
+	</div>
+</section>

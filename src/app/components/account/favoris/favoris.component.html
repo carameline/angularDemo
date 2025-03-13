@@ -1,0 +1,15 @@
+<section class="favoris-section" data-aos="fade-up">
+  <h2>Mes favoris</h2>
+
+  <div *ngIf="favoris.length === 0">
+    <p>Vous n’avez pas encore ajouté d’annonce en favori.</p>
+    <a routerLink="/annonces">Voir les annonces</a>
+  </div>
+
+  <div class="annonces-grid" *ngIf="favoris.length > 0">
+    <app-annonce-card
+      *ngFor="let annonce of favoris"
+      [annonce]="annonce"
+    ></app-annonce-card>
+  </div>
+</section>

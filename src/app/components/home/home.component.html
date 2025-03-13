@@ -1,0 +1,96 @@
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Bienvenue sur <span>ZappyAnnonces</span></h1>
+    <p>Trouvez ou publiez des petites annonces en un éclair</p>
+
+    <form class="search-form" (ngSubmit)="onSearch()">
+	  <div class="search-group">
+		<i class="fas fa-search"></i>
+		<input
+		  type="text"
+		  placeholder="Que cherchez-vous ?"
+		  [(ngModel)]="searchQuery"
+		  name="search"
+		/>
+	  </div>
+
+	  <div class="search-group">
+		<i class="fas fa-list"></i>
+		<select [(ngModel)]="searchCategorie" name="categorie">
+		  <option value="">Toutes catégories</option>
+		  <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+		</select>
+	  </div>
+
+	 <button type="submit">
+	  <i class="fas fa-search"></i> Rechercher
+	</button>
+
+	</form>
+  </div>
+</section>
+
+<section class="why-section" data-aos="fade-up">
+  <h2>Pourquoi <span>ZappyAnnonces</span> ?</h2>
+  <div class="why-cards">
+    <div class="why-card">
+      <i class="fas fa-bolt"></i>
+      <h3>Rapide</h3>
+      <p>Publiez ou trouvez une annonce en quelques secondes, sans prise de tête.</p>
+    </div>
+    <div class="why-card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Sécurisé</h3>
+      <p>Vos données et vos annonces sont protégées dans un environnement fiable.</p>
+    </div>
+    <div class="why-card">
+      <i class="fas fa-clock"></i>
+      <h3>24/7</h3>
+      <p>Accédez à la plateforme à toute heure, depuis n’importe quel appareil.</p>
+    </div>
+  </div>
+</section>
+
+<section class="categories-section" data-aos="fade-up">
+  <h2>Catégories populaires</h2>
+  <div class="categories-grid">
+    <a class="category-card">
+      <i class="fas fa-home"></i>
+      <span>Immobilier</span>
+    </a>
+    <a class="category-card">
+      <i class="fas fa-car"></i>
+      <span>Auto / Moto</span>
+    </a>
+    <a class="category-card">
+      <i class="fas fa-laptop"></i>
+      <span>Multimédia</span>
+    </a>
+    <a class="category-card">
+      <i class="fas fa-tshirt"></i>
+      <span>Mode</span>
+    </a>
+    <a class="category-card">
+      <i class="fas fa-couch"></i>
+      <span>Maison</span>
+    </a>
+    <a class="category-card">
+      <i class="fas fa-tools"></i>
+      <span>Bricolage</span>
+    </a>
+  </div>
+</section>
+
+<section class="latest-section" data-aos="fade-up">
+  <h2>Dernières annonces</h2>
+  <div class="latest-grid">
+    <app-annonce-card
+      *ngFor="let annonce of latestAnnonces"
+      [annonce]="annonce"
+    ></app-annonce-card>
+  </div>
+
+  <div class="see-more">
+    <a routerLink="/annonces">Voir toutes les annonces</a>
+  </div>
+</section>

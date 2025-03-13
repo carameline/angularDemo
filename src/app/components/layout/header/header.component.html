@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="container">
+    <a class="logo" routerLink="/">
+      <i class="fas fa-bullhorn"></i> ZappyAnnonces
+    </a>
+
+    <button class="burger-btn" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen">
+      <i class="fas" [ngClass]="menuOpen ? 'fa-times' : 'fa-bars'"></i>
+    </button>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a routerLink="/"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a routerLink="/annonces"><i class="fas fa-list"></i> Annonces</a></li>
+      <li><a routerLink="/mon-compte"><i class="fas fa-user-circle"></i> Mon compte</a></li>
+    </ul>
+  </div>
+</nav>

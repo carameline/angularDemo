@@ -1,0 +1,65 @@
+.form-section {
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-section button {
+  padding: 1rem;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: var(--secondary);
+}
+/***** feedback visuel ****/
+
+.form-section .form-group input.invalid,
+.form-section .form-group textarea.invalid,
+.form-section .form-group select.invalid {
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+.form-section .form-group small {
+  color: red;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+}

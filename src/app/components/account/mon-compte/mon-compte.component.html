@@ -1,0 +1,23 @@
+<button class="burger-toggle" (click)="menuOpen = !menuOpen">
+  <i class="fas" [ngClass]="menuOpen ? 'fa-times' : 'fa-bars'"></i>
+</button>
+
+
+<section class="mon-compte-layout">
+  <nav class="side-menu">
+	  <div class="menu-header">
+		<i class="fas fa-user-circle"></i>
+		<span>Mon espace</span>
+	  </div>
+
+	  <ul class="menu-links">
+		<li><a routerLink="mes-annonces" routerLinkActive="active"><i class="fas fa-list"></i> Mes annonces</a></li>
+		<li><a routerLink="publier" routerLinkActive="active"><i class="fas fa-plus-circle"></i> Publier</a></li>
+		<li><a routerLink="favoris" routerLinkActive="active"><i class="fas fa-heart"></i> Favoris</a></li>
+	  </ul>
+	</nav>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</section>
